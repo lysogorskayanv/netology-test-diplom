@@ -148,5 +148,5 @@ groups_info = vk_api_controller.get_group_info(unique_groups)
 result_info = vk_api_controller.normalise_result(groups_info)
 
 with open('result.json', 'wb') as f:
-    # Форматирование выходного файла
-    f.write(str(result_info).replace(', \'', ',\n\'').replace('}, ', '},\n').replace('\'', '"').encode('utf-8'))
+    json.dump(result_info, f)
+    print('Записан файл: {}'.format(f.name)))
